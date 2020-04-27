@@ -35,7 +35,7 @@ ADD pom.xml $WORK/
 WORKDIR $WORK
 # RUN rm -rf target/
 
-RUN mvn package -Dmaven.test.skip=true
+RUN mvn clean install
 
 # Объявлем порт сервера
 EXPOSE 8080
