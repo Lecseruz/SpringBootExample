@@ -1,6 +1,6 @@
 package com.magomed.application.internal;
 
-import com.magomed.application.api.IUserService;
+import com.magomed.application.api.IUserDaoService;
 import com.magomed.application.api.IUserStatBusinessService;
 import com.magomed.application.api.UpdateUserException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +14,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class UserStatBusinessService implements IUserStatBusinessService {
-    private static final ConcurrentHashMap<Integer, User> map = new ConcurrentHashMap<>();
-    private static final ConcurrentHashMap<Integer, List<ActivityTime>> activityMap = new ConcurrentHashMap<>();
     public static final int COUNT_STATS_PER_DAY = 10000;
 
+    public static final String COUNTRY_IS_WRONG = "country is wrong for user";
+
+    private final ConcurrentHashMap<Integer, User> map = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<Integer, List<ActivityTime>> activityMap = new ConcurrentHashMap<>();
+
     @Autowired
-    private IUserService daoService;
+    private IUserDaoService daoService;
 
     @Override
     public User syncUserAndGet(int id) {
@@ -50,7 +53,7 @@ public class UserStatBusinessService implements IUserStatBusinessService {
                 map.put(id, oldUser);
             }
             if (!oldUser.getCountry().equals(user.getCountry())) {
-                throw new UpdateUserException(ServerUtils.COUNTRY_IS_WRONG);
+                throw new UpdateUserException(COUNTRY_IS_WRONG);
             }
             map.computeIfPresent(id, (key, oldUserInformation) -> user);
         } catch (SQLException e) {

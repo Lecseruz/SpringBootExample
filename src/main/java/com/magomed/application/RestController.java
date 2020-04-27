@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.magomed.application.api.IUserManager;
 import com.magomed.application.api.IUserStatBusinessService;
-import com.magomed.application.internal.ServerUtils;
 import com.magomed.application.api.UpdateUserException;
 import com.magomed.application.internal.User;
 import org.slf4j.Logger;
@@ -20,46 +19,52 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RestController {
     public static final Logger logger = LoggerFactory.getLogger(RestController.class);
+
+    private static final String FAILED = "FAILED";
+    private static final String GET_USER = "/getUser";
+    private static final String SYNC_USER = "/syncUser";
+    private static final String RECEIVE_STATS = "/receiveStats";
+
     @Autowired
-    private IUserStatBusinessService service;
+    private IUserStatBusinessService userStatBusinessService;
 
     @Autowired
     private IUserManager manager;
 
-    @GetMapping(path = ServerUtils.GET_USER)
+    @GetMapping(path = GET_USER)
     public ResponseEntity<?> getUser(@RequestParam(value = "id") int id) {
         try {
-            User newUser = service.syncUserAndGet(id);
+            User newUser = userStatBusinessService.syncUserAndGet(id);
             logger.info("Get user information with id = " + id + " completed successfully");
             return ResponseEntity.ok(new ObjectMapper().writeValueAsString(newUser));
         } catch (UpdateUserException | JsonProcessingException e) {
             logger.error("Get user information  with id = " + id + " failed", e);
-            return ResponseEntity.badRequest().body(ServerUtils.FAILED);
+            return ResponseEntity.badRequest().body(FAILED);
         }
     }
 
-    @PostMapping(path = ServerUtils.SYNC_USER)
+    @PostMapping(path = SYNC_USER)
     public ResponseEntity<?> syncUser(@RequestParam(value = "id") int id, @RequestBody String body) {
         try {
             User user = manager.getUserData(body).id(id).build();
-            service.updateUSer(user);
+            userStatBusinessService.updateUSer(user);
             logger.info("Sync user information with id = " + id + " completed successfully");
             return ResponseEntity.ok().build();
         } catch (UpdateUserException e) {
             logger.error("Sync user information with id = " + id + "failed", e);
-            return ResponseEntity.badRequest().body(ServerUtils.FAILED);
+            return ResponseEntity.badRequest().body(FAILED);
         }
     }
 
-    @GetMapping(path = ServerUtils.RECEIVE_STATS)
+    @GetMapping(path = RECEIVE_STATS)
     public ResponseEntity<?> receiveStats(@RequestParam(value = "id") int id, @RequestParam(value = "activity") int activity) {
         try {
-            service.updateStats(id, activity);
+            userStatBusinessService.updateStats(id, activity);
             logger.info("Add statistics  with id = " + id + " completed successfully");
             return ResponseEntity.ok().build();
         } catch (UpdateUserException e) {
             logger.error("Add statistics  with id = " + id + "  failed", e);
-            return ResponseEntity.badRequest().body(ServerUtils.FAILED);
+            return ResponseEntity.badRequest().body(FAILED);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.magomed.application.internal;
 
-import com.magomed.application.api.IUserService;
+import com.magomed.application.api.IUserDaoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class UserService implements IUserService {
+public class UserDaoService implements IUserDaoService {
 
     private JdbcTemplate jdbcTemplate;
 
-    public static final Logger logger = LoggerFactory.getLogger(UserService.class);
+    public static final Logger logger = LoggerFactory.getLogger(UserDaoService.class);
 
     @Autowired
-    public UserService(JdbcTemplate jdbcTemplate) {
+    public UserDaoService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
