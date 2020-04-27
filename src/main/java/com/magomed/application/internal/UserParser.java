@@ -3,12 +3,12 @@ package com.magomed.application.internal;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.magomed.application.api.DataNotFoundException;
-import com.magomed.application.api.IUserManager;
+import com.magomed.application.api.IUserParser;
 import com.magomed.application.api.UserBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserManager implements IUserManager {
+public class UserParser implements IUserParser {
     private ObjectMapper mapper = new ObjectMapper();
 
     public UserBuilder getUserData(String body) {

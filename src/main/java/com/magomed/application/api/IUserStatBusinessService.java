@@ -1,6 +1,6 @@
 package com.magomed.application.api;
 
-import com.magomed.application.internal.User;
+import com.magomed.application.internal.models.User;
 
 public interface IUserStatBusinessService {
     User syncUserAndGet(int id) throws UpdateUserException;

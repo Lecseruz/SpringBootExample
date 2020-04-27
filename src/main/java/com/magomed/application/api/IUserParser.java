@@ -1,5 +1,5 @@
 package com.magomed.application.api;
 
-public interface IUserManager {
+public interface IUserParser {
     UserBuilder getUserData(String bidy) throws DataNotFoundException;
 }

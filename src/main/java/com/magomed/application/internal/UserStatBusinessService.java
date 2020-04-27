@@ -3,6 +3,8 @@ package com.magomed.application.internal;
 import com.magomed.application.api.IUserDaoService;
 import com.magomed.application.api.IUserStatBusinessService;
 import com.magomed.application.api.UpdateUserException;
+import com.magomed.application.internal.models.ActivityTime;
+import com.magomed.application.internal.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

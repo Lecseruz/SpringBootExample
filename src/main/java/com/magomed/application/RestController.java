@@ -2,10 +2,10 @@ package com.magomed.application;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.magomed.application.api.IUserManager;
+import com.magomed.application.api.IUserParser;
 import com.magomed.application.api.IUserStatBusinessService;
 import com.magomed.application.api.UpdateUserException;
-import com.magomed.application.internal.User;
+import com.magomed.application.internal.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class RestController {
     private IUserStatBusinessService userStatBusinessService;
 
     @Autowired
-    private IUserManager manager;
+    private IUserParser manager;
 
     @GetMapping(path = GET_USER)
     public ResponseEntity<?> getUser(@RequestParam(value = "id") int id) {

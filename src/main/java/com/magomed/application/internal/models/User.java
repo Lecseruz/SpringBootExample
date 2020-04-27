@@ -1,4 +1,4 @@
-package com.magomed.application.internal;
+package com.magomed.application.internal.models;
 
 import java.util.Objects;
 

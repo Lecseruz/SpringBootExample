@@ -1,5 +1,5 @@
 package com.magomed.application.api;
-import com.magomed.application.internal.User;
+import com.magomed.application.internal.models.User;
 
 public class UserBuilder {
     private User user;

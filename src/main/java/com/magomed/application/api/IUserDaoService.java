@@ -1,7 +1,7 @@
 package com.magomed.application.api;
 
-import com.magomed.application.internal.ActivityTime;
-import com.magomed.application.internal.User;
+import com.magomed.application.internal.models.ActivityTime;
+import com.magomed.application.internal.models.User;
 
 import java.sql.SQLException;
 import java.util.List;

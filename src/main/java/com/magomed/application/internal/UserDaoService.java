@@ -1,6 +1,8 @@
 package com.magomed.application.internal;
 
 import com.magomed.application.api.IUserDaoService;
+import com.magomed.application.internal.models.ActivityTime;
+import com.magomed.application.internal.models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
