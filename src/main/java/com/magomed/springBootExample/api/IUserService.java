@@ -6,7 +6,7 @@ import com.magomed.springBootExample.internal.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserDaoService {
+public interface IUserService {
     User getUser(int id) throws SQLException;
 
     void syncUser(User user) throws SQLException;

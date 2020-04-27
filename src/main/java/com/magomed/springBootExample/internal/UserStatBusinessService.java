@@ -1,6 +1,6 @@
 package com.magomed.springBootExample.internal;
 
-import com.magomed.springBootExample.api.IUserDaoService;
+import com.magomed.springBootExample.api.IUserService;
 import com.magomed.springBootExample.api.IUserStatBusinessService;
 import com.magomed.springBootExample.api.UpdateUserException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class UserStatBusinessService implements IUserStatBusinessService {
     public static final int COUNT_STATS_PER_DAY = 10000;
 
     @Autowired
-    private IUserDaoService daoService;
+    private IUserService daoService;
 
     @Override
     public User syncUserAndGet(int id) {
