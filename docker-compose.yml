@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  server:
+    image: server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_DRIVERCLASSNAME=org.postgresql.Driver
+      - DB_USERNAME=example
+      - DB_PASSWORD=example
+      - DB_URL=jdbc:postgresql://db:5432/example
+      - SERVER_PORT=8080
+  db:
+    image: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_USER=example
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=example

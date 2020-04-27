@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    platform: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driverClassName: ${DB_DRIVERCLASSNAME}
+server:
+  port: ${SERVER_PORT}
