@@ -1,6 +1,6 @@
-package com.magomed.springBootExample.api;
+package com.magomed.application.api;
 
-import com.magomed.springBootExample.internal.User;
+import com.magomed.application.internal.User;
 
 public interface IUserStatBusinessService {
     User syncUserAndGet(int id) throws UpdateUserException;

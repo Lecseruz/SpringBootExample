@@ -1,4 +1,4 @@
-package com.magomed.springBootExample.internal;
+package com.magomed.application.internal;
 
 public final class ServerUtils {
     public static final String GET_USER = "/getUser";

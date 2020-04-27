@@ -1,4 +1,4 @@
-package com.magomed.springBootExample.api;
+package com.magomed.application.api;
 
 import java.sql.SQLException;
 

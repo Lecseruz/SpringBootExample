@@ -1,5 +1,5 @@
-package com.magomed.springBootExample.api;
-import com.magomed.springBootExample.internal.User;
+package com.magomed.application.api;
+import com.magomed.application.internal.User;
 
 public class UserBuilder {
     private User user;

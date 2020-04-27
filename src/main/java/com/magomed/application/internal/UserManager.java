@@ -1,10 +1,10 @@
-package com.magomed.springBootExample.internal;
+package com.magomed.application.internal;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.magomed.springBootExample.api.DataNotFoundException;
-import com.magomed.springBootExample.api.IUserManager;
-import com.magomed.springBootExample.api.UserBuilder;
+import com.magomed.application.api.DataNotFoundException;
+import com.magomed.application.api.IUserManager;
+import com.magomed.application.api.UserBuilder;
 import org.springframework.stereotype.Service;
 
 @Service

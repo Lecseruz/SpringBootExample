@@ -1,6 +1,6 @@
-package com.magomed.springBootExample.internal;
+package com.magomed.application.internal;
 
-import com.magomed.springBootExample.api.IUserService;
+import com.magomed.application.api.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

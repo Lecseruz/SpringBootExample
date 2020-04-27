@@ -1,12 +1,12 @@
-package com.magomed.springBootExample;
+package com.magomed.application;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.magomed.springBootExample.api.IUserManager;
-import com.magomed.springBootExample.api.IUserStatBusinessService;
-import com.magomed.springBootExample.internal.ServerUtils;
-import com.magomed.springBootExample.api.UpdateUserException;
-import com.magomed.springBootExample.internal.User;
+import com.magomed.application.api.IUserManager;
+import com.magomed.application.api.IUserStatBusinessService;
+import com.magomed.application.internal.ServerUtils;
+import com.magomed.application.api.UpdateUserException;
+import com.magomed.application.internal.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

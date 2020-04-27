@@ -1,4 +1,4 @@
-package com.magomed.springBootExample.internal;
+package com.magomed.application.internal;
 
 public class ActivityTime {
     private int activity;

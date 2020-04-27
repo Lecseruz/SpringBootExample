@@ -1,8 +1,8 @@
-package com.magomed.springBootExample.internal;
+package com.magomed.application.internal;
 
-import com.magomed.springBootExample.api.IUserService;
-import com.magomed.springBootExample.api.IUserStatBusinessService;
-import com.magomed.springBootExample.api.UpdateUserException;
+import com.magomed.application.api.IUserService;
+import com.magomed.application.api.IUserStatBusinessService;
+import com.magomed.application.api.UpdateUserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

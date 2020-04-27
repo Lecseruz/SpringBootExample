@@ -1,7 +1,7 @@
-package com.magomed.springBootExample.api;
+package com.magomed.application.api;
 
-import com.magomed.springBootExample.internal.ActivityTime;
-import com.magomed.springBootExample.internal.User;
+import com.magomed.application.internal.ActivityTime;
+import com.magomed.application.internal.User;
 
 import java.sql.SQLException;
 import java.util.List;

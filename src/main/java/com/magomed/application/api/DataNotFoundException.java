@@ -1,4 +1,4 @@
-package com.magomed.springBootExample.api;
+package com.magomed.application.api;
 
 
 public class DataNotFoundException extends RuntimeException {
